@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+	* {margin: 0; padding: 0;}
+	body {}
+
+	h1 {margin:0; padding:0.3em 0; color:#fff;}
+	h3 {margin:0; padding:0.2em 0;}
+	p { padding: 0.5em 0pt 0pt 0.5em;}
+	li {margin-left: 1em;}
+	td {padding: 0;}
+	#maintable {width:100%; margin:0; padding: 0;}
+	#maintable td {padding: 1em;}
+	#header {background:#a31e39; padding:0 0 0 1em;}
+	.menu {background:#e0e0e0; width:20%; vertical-align: top; padding: 8pt;}
+	.menu li a {text-decoration: none; color:#333333;}
+	.menu li a:hover {text-decoration: none; color:#ffffff;}
+	.fieldset a{color:#a31e39;}
+	#content { background:#ffffff; vertical-align: top;}
+	#content td {padding: 0.1em;}
+	#fads { background:#e0e0e0; width:25%; vertical-align: top;}
+	#footer { background:#455c5a;color:#fff; padding: 0.2em 0 0.2em 1em;}
+	#footer a {color:#fff;}
+	#footer a:hover {text-decoration:none;}
+	.listindent {margin: 0 0 0 2em;}
+	#itemtable th {text-align:center; padding:0.2em 1em 0.2em 1em; background-color:#455c5a; color:#FFFFFF;}
+	#itemtable td {text-align:center; padding:0.2em 1em 0.2em 1em;}
+	#license {font-size: smaller; background:#FFFFFF;}
+	
+	
+	#home {list-style:disc; color:#a31e39;}
+
+	#header {margin: 0px; color:#FFFFFF; padding: 0.1em 0.51em 0.1em 0.5em;}
+
+	.sidenav {
+		 height: 100%; /* Full-height: remove this if you want "auto" height */
+		 width: 200px; /* Set the width of the sidebar */
+		 position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+		 z-index: 1; /* Stay on top */
+		 top: 0; /* Stay at the top */
+		 left: 0;
+		 background-color: #A31E39; /* Black */
+		 overflow-x: hidden; /* Disable horizontal scroll */
+		 padding-top: 20px;
+		 color: #ccc;
+	}
+	
+	#main {
+		 margin-left: 200px; /* Same width as the sidebar + left position in px */
+	}
+	
+	#content {
+		padding: 1em;
+	}
+
+	@media screen and (max-height: 450px) {
+		 .sidenav {padding-top: 15px;}
+		 .sidenav a {font-size: 18px;}
+	}
+	.sidenav a {
+		 padding: 2px 2px 2px 2px;
+		 text-decoration: none;
+		 color: #A2A2A2;
+		 display: block;
+		 transition: 0.3s;
+	}
+	.sidenav a:hover {
+		 color: #f1f1f1;
+	}
+	.applet_image {padding:1em;}
+	
+

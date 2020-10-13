@@ -1,0 +1,84 @@
+		body {
+			font-family: 'Open Sans', sans-serif; 
+			background-color:#e0ffe0;
+/* 
+			background-color:#e0e0ff;
+ */
+		}
+		fieldset {
+			border: 1;
+		}
+	
+		#shading {
+			width: 240px;
+			margin: 0.2em;	
+		}
+		
+		#ptable {
+			width:860px; 
+			height:490px; 
+			background-color:#f8fff8;	
+/* 
+			background-color:#f0f0ff;	
+ */
+		}
+		
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 95px;					
+    height: 18px;					
+    padding: 1px;				
+    font: 14px sans-serif;		
+    background: steelblue;
+    color: white;	
+    border: 0px;		
+    border-radius: 4px;			
+    pointer-events: none;			
+}		
+		
+/* 
+		#puzzle {
+			width: 240px;
+			margin-top: 0.8em;	
+			border:2px solid #888;
+		}
+ */
+/* 
+		#info {
+			width: 240px;
+			margin: 0.2em;	
+			border:2px solid #888;
+			margin-top: 0.95em;	
+		}
+ */
+	
+/* 
+		#puzzle_label{
+		 width:8em;
+		 margin-top:-11px;
+		 margin-left:7px;
+		 background:white;	
+	
+		}
+		#info_label{
+		 width:10em;
+		 margin-top:-11px;
+		 margin-left:7px;
+		 background:white;	
+		}
+ */
+	
+		 label {
+			display: block;
+			margin: 30px 0 0 0;
+		 }
+		 select {
+			width: 200px;
+		 }
+		 .overflow {
+			height: 200px;
+		 }
+	 
+		 #element_properties {
+		 }

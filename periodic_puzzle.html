@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Periodic Table Jigsaw Puzzle </title>
+<meta name="Author" content="Brian Reid" />
+<meta name="Keywords" content="chemistry, periodic, table, jigsaw, puzzle, elements, properties" />
+<meta name="Description" content="Periodic Table Jigsaw Puzzle" />
+
+<!-- Common CSS -->
+<link rel="stylesheet" href = "includes/main.css" />
+<link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href = "https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<!-- Common JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"   ></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"                     ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="includes/bpreid.js"                                                 ></script>
+
+
+<!-- Periodic Puzzle CSS -->
+<link rel="stylesheet" href = "pp/css/periodic_puzzle.css">
+
+<!-- Periodic Puzzle JavaScript -->
+<script src = "pp/js/colorbrewer.js"> </script>
+<script src = "pp/js/d3.v3.min.js"  > </script>
+<script src = "pp/js/table_data.js" > </script>
+<script src = "pp/js/d3moji.js"     > </script>
+
+
+</head>
+
+<body>
+
+<div id = "mySidenav" class="sidenav"> </div>
+<div id = "main">
+<h2 id = "header">Periodic Puzzle</h2>
+        
+ 	<div style="text-align:left;">
+		<div>
+				<svg id= "ptable">
+		</div>
+	
+		<div style="width:840px; ">
+
+			<div id="puzzle" style="width:25%; float:left; padding-left:1em; text-align:left;">
+			  <div class="dropup">
+					 <button class="btn btn-default dropdown-toggle" type="button" id="puzzle_menu" data-toggle="dropdown">Puzzle
+					 <span class="caret"></span></button>
+					 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="puzzle_options">
+						<li><a href="#" id="no_puzzle">No Puzzle</a></li>
+						<li class="divider"></li>
+						<li><a href="#" id="all">All Elements</a></li>
+						<li><a href="#" id="alkali_metals">Alkali Metals</a></li>
+						<li><a href="#" id="alkaline_earths">Alkaline Earths</a></li>
+						<li><a href="#" id="lanthanides">Lanthanides</a></li>
+						<li><a href="#" id="halogens">Halogens</a></li>
+						<li><a href="#" id="noble_gases">Noble Gases</a></li>
+						<li><a href="#" id="p_block">P-Block</a></li>
+					 </ul>
+				</div> 
+				
+				Select a puzzle option to scramble the elements in a family. Then test your
+                  knowledge by dragging each element to its
+                  proper location in the table.
+			</div>
+		
+			<div id="solver" style="width:15%; float:left; padding-left:1em;  text-align:left;">
+			  <div class="dropup">
+					 <button class="btn btn-default dropdown-toggle disabled" type="button" id="solve_menu" data-toggle="dropdown">Solve
+					 <span class="caret"></span></button>
+					 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="solve_options">
+						<li><a href="#" id="solve_all">Solve All</a></li>
+						<li><a href="#" id="solve_element">Solve Element</a></li>
+					 </ul>
+				</div>
+				When you can't find the location for an element, press
+                        the &quot;Solve&quot; or &quot;Solve All&quot; buttons.
+			</div>
+
+			<div id="shading"  style="width:29%; float:left;  padding-left:1em;  text-align:left;">
+				<div class="dropup">
+					<button class="btn btn-default dropdown-toggle" type="button" id="shade_menu" data-toggle="dropdown">Table Shading
+					<span class="caret"></span></button>
+					 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" id="shade_options">
+						<li><a href="#" id="no_shading">No Shading</a></li>
+						<li class="divider"></li>
+						<li><a href="#" id="atomic_radius">Atomic Radius</a></li>
+						<li><a href="#" id="density">Density</a></li>
+						<li><a href="#" id="boiling_point">Boiling Point</a></li>
+						<li><a href="#" id="electronegativity">Electronegativity</a></li>
+						<li><a href="#" id="electron_affinity">Electron Affinity</a></li>
+						<li><a href="#" id="ionization_energy">Ionization Energy</a></li>
+						<li><a href="#" id="mass">Mass</a></li>
+						<li><a href="#" id="melting_point">Melting Point</a></li>
+						<li><a href="#" id="metal">Metal Classification</a></li>
+					 </ul>
+				</div>
+			Use the Table Shading control to shade the table according to the values of the physical or chemical properties of the elements.
+			</div>
+
+
+			<div id="info" style="width:29%; float:left;  padding-left:1em;  text-align:left;">
+			  <div class="dropup">
+					 <button class="btn btn-default Xdropdown-toggle" type="Xbutton"  id="property_list" data-toggle="Xdropdown">Element Properties
+					 <span class="caret"></span></button>
+					 <ul class="Xdropdown-menu" id="element_info" style="list-style-type: none;">
+					 </ul>
+				</div>
+			</div>
+
+		</div>	  
+	  
+	</div>	
+
+	<script src="pp/js/table.js"></script>
+         
+         <div style="clear: both;">&nbsp;</div>   
+			<div id='footer' style='clear: both;margin-top:10em; '></div>
+	</div>
+
+</body>
+<script>
+	$( document ).ready(function() {
+
+		 var side_menu = "<ul style='list-style:none;'>";
+		 for (var item = 0; item < menu_array.length; item++){
+			if (menu_array[item].type != 'link') {
+				side_menu += "<li>"+menu_array[item].name + "</li>";
+			} else {
+				side_menu += "<li class='listindent'><a href='"+menu_array[item].link+"'>"+menu_array[item].name + "</a></li>";
+			}
+		 }
+		 side_menu += "</ul>";
+	 
+		 $('#mySidenav').html(side_menu);
+		 $('#footer').html(footer);
+
+	});	
+
+</script>
+</html>
