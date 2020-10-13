@@ -7,7 +7,7 @@
 	var element_to_solve = -1;
 	var ge_rects, rects, numbers;
 	var displayed_element = 0;
-	var title_text, symbol_text, name_text, hname_text, number_text, mass_text, shade_text;
+	var title_text, symbol_text, name_text, number_text, mass_text, shade_text;
 	var puzzle_counter, previous_puzzle, first_puzzle = true;
 	var score, last_answer, trend;
 	var feedback_color        = "#117711";
@@ -266,7 +266,7 @@
 		.attr("x",table_left_margin + 5.5*element_width)
 		.attr("y",table_top_margin  + 0.5*element_height)
 		.attr("font-size","200%")
-		.text("Periodic Table");
+		.text("Periodic Table"); //2020.10.13 Modify
 	symbol_text = svg.append("text")
 		.attr("x",table_left_margin + 2.5*element_width)
 		.attr("y",table_top_margin  + 1.5*element_height)
@@ -334,7 +334,7 @@
     .attr("text-anchor", "middle")
     .attr("x", element_width/2)
     .attr("y", element_height/2)
-	 .attr("dy", "0.3em")
+	 .attr("dy", "0.3em") //2020.10.13 Modify 
 	 .attr("font-size","125%")
     .text(function(d) {return d.symbol;});
 
@@ -343,7 +343,8 @@
     .attr("dx", ".2em")
 	 .attr("font-size","75%")
     .text(function(d) {return d.number;});    
-
+    
+   //2020.10.13 Add Start---------------------------------
 	var hnames = ge_rects.append("text")	
     .attr("dy", "5.2em")
     .attr("dx", ".2em")
@@ -471,8 +472,9 @@
 			case 118: return "오가네손"; break;
 			//...
 			default : return "";
-		}; //출처: https://blueice0414.tistory.com/49 [담이의 세상이야기]    
+		}; //문법 참고: https://blueice0414.tistory.com/49
     });
+   //2020.10.13 Add End---------------------------------
 
 	set_table_legend();
     
