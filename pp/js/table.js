@@ -7,7 +7,7 @@
 	var element_to_solve = -1;
 	var ge_rects, rects, numbers;
 	var displayed_element = 0;
-	var title_text, symbol_text, name_text, number_text, mass_text, shade_text;
+	var title_text, symbol_text, name_text, hname_text, number_text, mass_text, shade_text;
 	var puzzle_counter, previous_puzzle, first_puzzle = true;
 	var score, last_answer, trend;
 	var feedback_color        = "#117711";
@@ -266,7 +266,7 @@
 		.attr("x",table_left_margin + 5.5*element_width)
 		.attr("y",table_top_margin  + 0.5*element_height)
 		.attr("font-size","200%")
-		.text("Periodic Puzzle");
+		.text("Periodic Table");
 	symbol_text = svg.append("text")
 		.attr("x",table_left_margin + 2.5*element_width)
 		.attr("y",table_top_margin  + 1.5*element_height)
@@ -334,7 +334,7 @@
     .attr("text-anchor", "middle")
     .attr("x", element_width/2)
     .attr("y", element_height/2)
-	 .attr("dy", "0.5em")
+	 .attr("dy", "0.3em")
 	 .attr("font-size","125%")
     .text(function(d) {return d.symbol;});
 
@@ -343,6 +343,136 @@
     .attr("dx", ".2em")
 	 .attr("font-size","75%")
     .text(function(d) {return d.number;});    
+
+	var hnames = ge_rects.append("text")	
+    .attr("dy", "5.2em")
+    .attr("dx", ".2em")
+	 .attr("font-size","48%")
+    //.text(function(d) {return d.hnumber;});    
+    .text(function(d){
+		 switch(d.number){
+			case 1: return "수소"; break;
+			case 2: return "헬륨"; break;
+			case 3: return "리튬"; break;
+			case 4: return "베릴륨"; break;
+			case 5: return "붕소"; break;
+			case 6: return "탄소"; break;
+			case 7: return "질소"; break;
+			case 8: return "산소"; break;
+			case 9: return "플루오린"; break;
+			case 10: return "네온"; break;
+			case 11: return "나트륨"; break;
+			case 12: return "마그네슘"; break;
+			case 13: return "알루미늄"; break;
+			case 14: return "규소"; break;
+			case 15: return "인"; break;
+			case 16: return "황"; break;
+			case 17: return "염소"; break;
+			case 18: return "아르곤"; break;
+			case 19: return "칼륨"; break;
+			case 20: return "칼슘"; break;
+			case 21: return "스칸듐"; break;
+			case 22: return "티타늄"; break;
+			case 23: return "바나듐"; break;
+			case 24: return "크롬"; break;
+			case 25: return "망가니즈"; break;
+			case 26: return "철"; break;
+			case 27: return "코발트"; break;
+			case 28: return "니켈"; break;
+			case 29: return "구리"; break;
+			case 30: return "아연"; break;
+			case 31: return "갈륨"; break;
+			case 32: return "게르마늄"; break;
+			case 33: return "비소"; break;
+			case 34: return "셀레늄"; break;
+			case 35: return "브로민"; break;
+			case 36: return "크립톤"; break;
+			case 37: return "루비듐"; break;
+			case 38: return "스트론튬"; break;
+			case 39: return "이트륨"; break;
+			case 40: return "지르코늄"; break;
+			case 41: return "나이오븀"; break;
+			case 42: return "몰리브데넘"; break;
+			case 43: return "테크네튬"; break;
+			case 44: return "루테늄"; break;
+			case 45: return "로듐"; break;
+			case 46: return "팔라듐"; break;
+			case 47: return "은"; break;
+			case 48: return "카드뮴"; break;
+			case 49: return "인듐"; break;
+			case 50: return "주석"; break;
+			case 51: return "안티모니"; break;
+			case 52: return "텔루륨"; break;
+			case 53: return "아이오딘"; break;
+			case 54: return "제논"; break;
+			case 55: return "세슘"; break;
+			case 56: return "바륨"; break;
+			case 57: return "란타넘"; break;
+			case 58: return "세륨"; break;
+			case 59: return "프라세오디뮴"; break;
+			case 60: return "네오디뮴"; break;
+			case 61: return "프로메튬"; break;
+			case 62: return "사마륨"; break;
+			case 63: return "유로폼"; break;
+			case 64: return "가돌리늄"; break;
+			case 65: return "터븀"; break;
+			case 66: return "디스프로슘"; break;
+			case 67: return "홀뮴"; break;
+			case 68: return "어븀"; break;
+			case 69: return "툴륨"; break;
+			case 70: return "이터븀"; break;
+			case 71: return "루테튬"; break;
+			case 72: return "하프늄"; break;
+			case 73: return "탄탈럼"; break;
+			case 74: return "텅스텐"; break;
+			case 75: return "레늄"; break;
+			case 76: return "오스뮴"; break;
+			case 77: return "이리듐"; break;
+			case 78: return "백금"; break;
+			case 79: return "금"; break;
+			case 80: return "수은"; break;
+			case 81: return "탈륨"; break;
+			case 82: return "납"; break;
+			case 83: return "비스무트"; break;
+			case 84: return "폴로늄"; break;
+			case 85: return "아스타틴"; break;
+			case 86: return "라돈"; break;
+			case 87: return "프랑슘"; break;
+			case 88: return "라듐"; break;
+			case 89: return "악티늄"; break;
+			case 90: return "토륨"; break;
+			case 91: return "프로트악티늄"; break;
+			case 92: return "우라늄"; break;
+			case 93: return "넵투늄"; break;
+			case 94: return "플로토늄"; break;
+			case 95: return "아메리슘"; break;
+			case 96: return "퀴륨"; break;
+			case 97: return "버클륨"; break;
+			case 98: return "캘리포늄"; break;
+			case 99: return "아인슈타이늄"; break;
+			case 100: return "페르뮴"; break;
+			case 101: return "멘델레븀"; break;
+			case 102: return "노벨륨"; break;
+			case 103: return "로렌슘"; break;
+			case 104: return "러더포듐"; break;
+			case 105: return "더브늄"; break;
+			case 106: return "시보귬"; break;
+			case 107: return "보륨"; break;
+			case 108: return "하슘"; break;
+			case 109: return "마이트너륨"; break;
+			case 110: return "다름슈타튬"; break;
+			case 111: return "뢴트게늄"; break;
+			case 112: return "코페르니슘"; break;
+			case 113: return "니호늄"; break;
+			case 114: return "플레로븀"; break;
+			case 115: return "모스코븀"; break;
+			case 116: return "리버모륨"; break;
+			case 117: return "테네신"; break;
+			case 118: return "오가네손"; break;
+			//...
+			default : return "";
+		}; //출처: https://blueice0414.tistory.com/49 [담이의 세상이야기]    
+    });
 
 	set_table_legend();
     
